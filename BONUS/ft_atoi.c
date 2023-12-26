@@ -6,11 +6,11 @@
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 11:16:27 by sbouabid          #+#    #+#             */
-/*   Updated: 2023/12/25 10:42:05 by sbouabid         ###   ########.fr       */
+/*   Updated: 2023/12/25 19:50:36 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	is_empty(char *str)
 {
@@ -23,7 +23,7 @@ void	is_empty(char *str)
 	}
 	if (str[i] == '\0')
 	{
-		write(1, "Error\n", 7);
+		write(2, "Error\n", 7);
 		exit(1);
 	}
 }
@@ -38,14 +38,11 @@ static int	ft_handle(char *s, int sign)
 	while (*s >= '0' && *s <= '9')
 	{
 		nb = nbr * 10 + (*s - '0');
-		if (nb < nbr && sign == 1)
-			return (-1);
-		else if (nb < nbr && sign == -1)
-			return (0);
 		nbr = nb;
 		s++;
 	}
-	if (nbr > 2147483647 || nbr < -2147483648)
+	if (nbr * sign > 2147483647 || nbr * sign < -2147483648
+		|| *s == '+' || *s == '-')
 	{
 		write(2, "Error\n", 7);
 		exit(1);

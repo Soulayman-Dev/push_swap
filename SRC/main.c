@@ -6,7 +6,7 @@
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 20:23:21 by sbouabid          #+#    #+#             */
-/*   Updated: 2023/12/25 10:43:14 by sbouabid         ###   ########.fr       */
+/*   Updated: 2023/12/25 17:19:30 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,7 @@ void	ft_valide(int ac, char **av, t_stack **top)
 	}
 	check_is_repeated(*top);
 	if (check_is_sorted(*top) == 1)
-	{
-		write(2, "Error\n", 7);
 		exit(1);
-	}
 }
 
 int	main(int ac, char **av)
@@ -49,7 +46,7 @@ int	main(int ac, char **av)
 	b = NULL;
 	ft_valide(ac, av, &a);
 	index_stack(&a);
-	if (ac == 3)
+	if (ft_stack_size(a) == 2)
 		sa(&a);
 	else
 	{

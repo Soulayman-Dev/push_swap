@@ -6,11 +6,11 @@
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 11:00:35 by sbouabid          #+#    #+#             */
-/*   Updated: 2023/12/24 18:31:54 by sbouabid         ###   ########.fr       */
+/*   Updated: 2023/12/25 19:50:52 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	ft_isdigit(char	*nbr)
 {
@@ -73,6 +73,11 @@ void	handel_number(t_stack **stack, char *str)
 	arr = ft_split(str, ' ');
 	while (arr[i])
 	{
+		if (ft_strlen(arr[i]) > 11)
+		{
+			write(2, "Error\n", 7);
+			exit(1);
+		}
 		ft_push(stack, ft_create_node(ft_atoi(arr[i])));
 		i++;
 	}

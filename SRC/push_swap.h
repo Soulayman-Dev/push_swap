@@ -6,16 +6,16 @@
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 11:57:49 by sbouabid          #+#    #+#             */
-/*   Updated: 2023/12/24 18:24:01 by sbouabid         ###   ########.fr       */
+/*   Updated: 2023/12/26 11:57:18 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+# define PUSH_SWAP_H 
 
 # include <stdlib.h>
 # include <unistd.h>
-
+ 
 typedef struct s_stack
 {
 	int				x;
@@ -25,7 +25,7 @@ typedef struct s_stack
 
 typedef struct s_temp
 {
-	int	i;
+	int	i; 
 	int	j;
 	int	x;
 	int	lp;
@@ -41,6 +41,7 @@ void	ft_push_stack(t_stack **stack1, t_stack **stack2);
 void	ft_rotate_stack(t_stack **stack);
 void	ft_reverse_rotate_stack(t_stack **stack);
 void	ft_clean(t_stack **stack);
+int		ft_strlen(char	*str);
 
 void	sa(t_stack **a);
 void	pa(t_stack **a, t_stack **b);
@@ -75,4 +76,5 @@ void	ft_algo_from_b_to_a(t_stack **a, t_stack **b);
 
 int		ft_biggset_index(t_stack *a);
 int		ft_last_index(t_stack *top);
+
 #endif

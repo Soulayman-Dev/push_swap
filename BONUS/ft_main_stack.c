@@ -6,11 +6,11 @@
 /*   By: sbouabid <sbouabid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 20:31:57 by sbouabid          #+#    #+#             */
-/*   Updated: 2023/12/24 18:21:59 by sbouabid         ###   ########.fr       */
+/*   Updated: 2023/12/26 09:35:25 by sbouabid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 t_stack	*ft_create_node(int value)
 {
@@ -37,4 +37,26 @@ void	ft_push(t_stack **stack, t_stack *node)
 			curr = curr->next;
 		curr->next = node;
 	}
+}
+
+// int	ft_strlen(char	*str)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (str[i])
+// 	{
+// 		i++;
+// 	}
+// 	return (i);
+// }
+ 
+int	ft_strcmp(char	*s1, char *s2)
+{
+	while (*s1 == *s2 && *s1 && *s2)
+	{
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
 }
